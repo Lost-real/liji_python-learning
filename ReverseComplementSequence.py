@@ -24,7 +24,7 @@ with open (args.file1,"r") as fn1:
             fsy_sequence = str(fsy_sequence) + str(store)
             chl_fasta[chl_gene] = fsy_sequence
 def reverse_complement(seq):
-  ntComplement = {'A':'T','T':'A','G':'C','C':'G','Y':'R','R':'Y','K':'M','M':'K','H':'D','D':'H','S':'W','W':'S','B':'V','V':'B','N':'N','a':'t','t':'a','c':'g','g':'c','n':'n','r':'y','y':'r'}
+  ntComplement = {'A':'T','T':'A','G':'C','C':'G','Y':'R','R':'Y','K':'M','M':'K','H':'D','D':'H','S':'W','W':'S','B':'V','V':'B','N':'N','a':'t','t':'a','c':'g','g':'c','n':'n','r':'y','y':'r','w':'w'}
   RevSeqList = list(reversed(seq))
   RevComSeqList = [ntComplement[k] for k in RevSeqList]
   RevComSeq = ''.join(RevComSeqList)

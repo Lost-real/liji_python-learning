@@ -1,15 +1,7 @@
-
-#! /usr/bin/env python
-#usage: python hash-always.py -l 1.list -f 2.txt > out.txt
-import argparse
-parser = argparse.ArgumentParser(description="Advanced screening always by hash")
-parser.add_argument("-f1","--file1",help="the original file,tabulated,make sure do not contain blank line")
-args = parser.parse_args()
-n = 0
-newlist = []#创建一个列表
-# b=open("out1.sequence.txt","w")
-with open(args.file1,"r") as fn1:
-    for i in fn1:
+def convert01(file1):
+    newlist=[]
+    n=0
+    for i in file1:
         eachline = i.strip()
         n = n + 1
         if eachline.startswith(">"):#把以">"开头的，打印出来，意思是把fasta序列的表头打印出来
@@ -46,7 +38,12 @@ with open(args.file1,"r") as fn1:
                     else:
                         newlist.append("0")
                 print("\t".join(newlist))
+from multiprocessing import Pool
 
-
-
-
+import argparse
+parser = argparse.ArgumentParser(description="Advanced screening always by hash")
+parser.add_argument("-f1","--file1",help="the original file,tabulated,make sure do not contain blank line")
+args = parser.parse_args()
+with open(args.file1,"r") as f1:
+    pool=Pool(2)
+    convert01(f1)

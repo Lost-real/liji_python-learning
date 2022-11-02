@@ -1,7 +1,7 @@
 n = 0
 newlist = []#创建一个列表
-b=open("003.txt","w")
-with open("001.txt","r") as fn1:
+b=open("ztotgen31spAT1G01550.2-1-2.txt","w")
+with open("ztotgen31spAT1G01550.2-1.txt","r") as fn1:
     for i in fn1:
         eachline = i.strip()
         n = n + 1
@@ -39,7 +39,7 @@ with open("001.txt","r") as fn1:
                     if i==j and j!="-":
                         newlist.append("1")
                     elif i!=j and i!="-" and j!="-":
-                        newlist.append("0.5")
+                        newlist.append("0.3")
                     else:
                         newlist.append("0")
                 print("\t".join(newlist))

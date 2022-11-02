@@ -1,5 +1,5 @@
-a=open('ztotgen31spAT1G01120.1-3.txt', 'r')
-b=open('ztotgen31spAT1G01120.1-5.txt', 'w')
+a=open('ztotgen31spAT1G01120.1-1-1.txt', 'r')
+b=open("ztotgen31spAT1G01120.1-1-1-1.txt", 'w')
 seq={}
 #下面的这个for循环其实就是一个生成字典的过程，需要仔细品味，领悟
 for line in a:
@@ -8,7 +8,7 @@ for line in a:
         # name=line.strip().split()[0]    #以空格为分隔符，并取序列为0的项，也就是带有>的基因的名字
         seq[name]=''
     else:
-        seq[name]+=line.replace('\n', '')#str.replace(old, new[, max]);old -- 将被替换的子字符串;new -- 新字符串，用于替换old子字符串;max -- 可选字符串, 替换不超过 max 次
+        seq[name]+=line.replace('\n','')#str.replace(old, new[, max]);old -- 将被替换的子字符串;new -- 新字符串，用于替换old子字符串;max -- 可选字符串, 替换不超过 max 次
 # print(seq)
 # print(seq.keys())
 # a.close()

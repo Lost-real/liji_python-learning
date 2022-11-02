@@ -14,8 +14,8 @@ AAGTCCGGTAAGGCTAGCTAACTTCGAACGACA
 >002
 GGCTAGCATGACACATCGACACCAGTAGCATCT
 """
-fr=open('ztotgen31spAT1G01120.1.txt', 'r')
-fw=open('ztotgen31spAT1G01120.1-1.txt', 'w')
+fr=open('ztotgen31spAT1G01550.2.txt', 'r')
+fw=open('ztotgen31spAT1G01550.2-1.txt', 'w')
 seq={}
 for line in fr:
     if line.startswith('>'):    #判断字符串是否以‘>开始’
@@ -24,7 +24,7 @@ for line in fr:
     else:
         seq[name]+=line.replace('\n', '')
 fr.close()
-
+# print(seq)
 for i in seq.keys():
     fw.write(i+"\n")
     # fw.write('\n')

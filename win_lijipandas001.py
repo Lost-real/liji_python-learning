@@ -1,5 +1,5 @@
 import pandas as pd
-with open ("ztotgen31spAT1G01120.1-5.txt","r") as f1:
+with open ("ztotgen31spAT1G01550.2-1-1-1.txt","r") as f1:
     a=pd.read_table(f1,header=None,index_col=0)
     a=a.dropna(axis=1)#axis=1的含义是按照列索引，axis=0的含义是按照行索引
     a1=[]
@@ -21,32 +21,33 @@ with open ("ztotgen31spAT1G01120.1-5.txt","r") as f1:
     # print(a3)
     b=[]
     #下面是使用滑动的方法
-    n=80
-    while n <= 100:
-        for i in range(len(a1)):
+    n=30
+    while n <= 40:
+        for i in range(0,len(a1),2):
             c = a1[i:i+n]
             # print(c)
             d = 0
             if len(c) == n:
 
                 for j in c:
-                    d+=a3.get(j, 100)
+                    d+=a3.get(j,0)
                 d=d/n
                 b.append(d)
             else:
                 pass
         n += 1
-# print(b)
+        # print(c)
+        print(b)
 
 m = 0
 for i in b:
-    if i >= 0.8:
+    if i >= 0.6:
         m += 1
         # print(a1[b_pos:b_pos+5])
         # print(a2[b_pos:b_pos+5])
     else:
         continue
-print(m)
+# print(m)
 
     # for i in range(len(list1)):
     #     c=list1[i:i+100]
